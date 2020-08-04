@@ -101,6 +101,18 @@
         </div>
     </section>
 
+    <div class="loader preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div><div class="gap-patch">
+            <div class="circle"></div>
+        </div><div class="circle-clipper right">
+            <div class="circle"></div>
+        </div>
+        </div>
+    </div>
+
 
 
 
@@ -119,26 +131,37 @@
   <script>
 
       $('.section').hide();
-    $(document).ready(function () {
 
-        $('.button-collapse').sideNav();
+      setTimeout(function () {
 
-        $('.count').each(function () {
-            $(this).prop('Counter', 0).animate({Counter:$(this).text()},{
-                duration:1000,
-                easing:'swing',
-                step:function (now) {
-                    $(this).text(Math.ceil(now));
+          $(document).ready(function () {
 
-                }
-            });
+              $('.section').fadeIn();
 
-        });
-      // Custom JS & jQuery here
+              $('.loader').fadeOut();
 
-        //couter
+              $('.button-collapse').sideNav();
 
-    });
+              $('.count').each(function () {
+                  $(this).prop('Counter', 0).animate({Counter:$(this).text()},{
+                      duration:1000,
+                      easing:'swing',
+                      step:function (now) {
+                          $(this).text(Math.ceil(now));
+
+                      }
+                  });
+
+              });
+              // Custom JS & jQuery here
+
+              //couter
+          });
+
+      }, 1000);
+
+
+
   </script>
 </body>
 
